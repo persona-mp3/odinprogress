@@ -23,6 +23,11 @@ menu.addEventListener('click', (e)=>{
         case 'report':
             console.log('Report was clicked')
             break;
+        case 'gitpractice':
+            console.log('You are been redirected to a a git tutorial page');
+            alert('Git tutorial')
+            target.target = '__blank'
+            target.href = 'https://youtu.be/hrTQipWp6co?t=1243&si=zC3RUiPeeijtUuLo'
 
     };
 
