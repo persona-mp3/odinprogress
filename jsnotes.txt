@@ -1,0 +1,50 @@
+a.addEventListener('event', (e)=>{
+    e.preventDefault();
+    e.stopPropagation();
+})
+
+e.preventDefault >> this stops the default behaviour of the tagerted DOM
+e.stopPropagation() >> stops the ufolding events of after an event has happende
+
+
+//PAGE LOAD events
+1. beforeunload >> fires before page is closed//use tries to leave the page. can use it to send a dilog to the user confirming if they wanted to leave
+
+2. unload >> fires when the page is completely unloaded, data can finally be sent
+
+3. DOMContentLoaded >> everything except css and others are loaded ie only HTML is active
+
+4. load >> browser has loaded everything
+
+//SCENARIOS//
+document.addEventListener('DOMContentLoaded', ()=>{});
+document.addEventListener('beforeunload', ()=>{});
+document.addEventListener('unload', ()=>{});
+document.addEventListener('load', ()=>{});
+
+
+
+//event delegation using the event bubling
+
+let menu = document.getElementById('menu');
+
+menu.addEventListener('click', (e)=>{
+    let target = e.target;
+
+    switch(target.id){
+        case 'home':
+            console.log('Home was clicked');
+            target.target = '__blank'
+            target.href = 'https://www.javascripttutorial.net/javascript-dom/javascript-event-delegation/'
+            break;
+        case 'dashboard':
+            console.log('Dashboard');
+            break;
+        case 'report':
+            console.log('Report was clicked')
+            break;
+
+    };
+
+    
+})
