@@ -1,35 +1,55 @@
-console.log('basics of arrays')
-const a = ['a', 'b', 'c', 'd'];
-const secArray = [2, 4, 6, 8, 12]
+console.log('Linkin Park')
+//etch a sketch
 
-// secArray.forEach(number => {console.log(number)})
+//callbac function that has event listner for mouseout
+function callBack(element) {
 
-//event delegation using the event bubling
+    //add event listener to the element
+    element.addEventListener('scroll', ()=>{
+        element.classList.toggle('.trail')
+    })
+}
+//creat 16 divs, i want to try using a for loop
+const container = document.querySelector('.container')
 
-let menu = document.getElementById('menu');
+document.addEventListener('DOMContentLoaded', ()=>{
 
-menu.addEventListener('click', (e)=>{
-    let target = e.target;
+    for (i=1; i <= (16*16); i++){
 
-    switch(target.id){
-        case 'home':
-            console.log('Home was clicked');
-            target.target = '__blank'
-            target.href = 'https://www.javascripttutorial.net/javascript-dom/javascript-event-delegation/'
-            break;
-        case 'dashboard':
-            console.log('Dashboard');
-            break;
-        case 'report':
-            console.log('Report was clicked')
-            break;
-        case 'gitpractice':
-            console.log('You are been redirected to a a git tutorial page');
-            alert('Git tutorial')
-            target.target = '__blank'
-            target.href = 'https://youtu.be/hrTQipWp6co?t=1243&si=zC3RUiPeeijtUuLo'
+        const newDiv = document.createElement('div');
+        container.appendChild(newDiv);
 
-    };
+        //add a mouseout event listener
+        
+    }
 
-    
+
+
 })
+
+function promptFunc(){
+    let question = prompt('How many squares you want boi?');
+    let i = 0;
+    let start = question;
+
+    if (start < 0 || !start || start >= 100){
+        alert('Invalid choice')
+        
+        return;
+    }
+    container.innerHTML= '';
+
+
+    for(i=0; i<=start; i++){
+
+        const newDiv = document.createElement('div');
+        container.appendChild(newDiv);
+        
+
+
+    }
+    return question;
+}
+
+const btn = document.querySelector('button');
+btn.addEventListener('click', promptFunc)

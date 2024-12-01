@@ -48,3 +48,36 @@ menu.addEventListener('click', (e)=>{
 
     
 })
+
+
+
+
+OBJECTS AND CONSTURCTORS AN PROTOPTYPES
+
+
+this references the object of which the function is a property. In other words, the this references the object that is currently calling the function.
+
+
+function Book(title, author, pages, read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+
+    //nested function
+    this.info = ()=>{
+        const message = `The ${this.title} by ${this.author}, has about ${this.pages} pages, and you've definitely ${this.read} it. Maybe..fn`
+        console.log(message);
+    }
+
+}
+
+//prototype(Think of prototypes as a global variable for ONLY the instances of a particular constructor
+//prototypes serve as a shared toolbox any instance of a particular constructor can use)
+Book.prototype.bookRating = function() {
+    console.log('The book is kinda cool')
+    console.log(`${this.title} is not meant for every one ngl`)
+
+}
+
+const book1 = new Book('Hobbit', 'J.R.R. Tolkien', 295, 'not'); 
